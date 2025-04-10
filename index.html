@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-161023728-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "UA-161023728-1")
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/webxnet.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="sV0JYWrprBCCq9k5wdLdpfgn0E_GRehV4--d3796-uw"
+    />
+    <meta
+      name="description"
+      content="Webxnet - Soluções digitais inteligentes para sua empresa. Consultoria especializada em IA, desenvolvimento web, e automação de processos para reduzir custos operacionais."
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f4c81" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.webxnet.com.br/" />
+    <meta name="webxnet" value="notranslate" />
+    <meta name="author" content="GGS Informática" />
+    <meta name="application-name" content="webxnet" />
+    <script
+      id="Cookiebot"
+      src="https://consent.cookiebot.com/uc.js"
+      data-cbid="bf8bc3d2-23b8-4712-b64f-5bf2320f3242"
+      data-blockingmode="auto"
+      type="text/javascript"
+    ></script>
+    <title>Webxnet - Soluções Digitais Inteligentes</title>
+  </head>
+  <body>
+    <a
+      href="#root"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary"
+    >
+      Pular para o conteúdo principal
+    </a>
+
+    <div id="root" role="main"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Botão Adicionar à Tela Inicial -->
+    <div
+      style="display: flex; justify-content: center"
+      role="complementary"
+      aria-label="Adicionar à tela inicial"
+    >
+      <button
+        id="btnAdd"
+        style="
+          display: none;
+          border-radius: 10px;
+          border: solid 2px #0f4c81;
+          background-color: #0f4c81;
+          color: white;
+          font-family: arial, sans-serif;
+          padding: 0.5em;
+        "
+        aria-label="Adicionar aplicativo à tela inicial"
+      >
+        adicionar à tela inicial
+      </button>
+    </div>
+
+    <!-- Chat Widget Container -->
+    <div
+      id="drift-widget-container"
+      role="complementary"
+      aria-label="Chat de atendimento"
+    ></div>
+
+    <!-- Start of Async Drift Code -->
+    <script>
+      "use strict"
+
+      !(function () {
+        var t = (window.driftt = window.drift = window.driftt || [])
+        if (!t.init) {
+          if (t.invoked)
+            return void (
+              window.console &&
+              console.error &&
+              console.error("Drift snippet included twice.")
+            )
+          ;(t.invoked = !0),
+            (t.methods = [
+              "identify",
+              "config",
+              "track",
+              "reset",
+              "debug",
+              "show",
+              "ping",
+              "page",
+              "hide",
+              "off",
+              "on",
+            ]),
+            (t.factory = function (e) {
+              return function () {
+                var n = Array.prototype.slice.call(arguments)
+                return n.unshift(e), t.push(n), t
+              }
+            }),
+            t.methods.forEach(function (e) {
+              t[e] = t.factory(e)
+            }),
+            (t.load = function (t) {
+              var e = 3e5,
+                n = Math.ceil(new Date() / e) * e,
+                o = document.createElement("script")
+              ;(o.type = "text/javascript"),
+                (o.async = !0),
+                (o.crossorigin = "anonymous"),
+                (o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js")
+              var i = document.getElementsByTagName("script")[0]
+              i.parentNode.insertBefore(o, i)
+            })
+        }
+      })()
+      drift.SNIPPET_VERSION = "0.3.1"
+      drift.load("v3em3tyamgv3")
+    </script>
+    <!-- End of Async Drift Code -->
+  </body>
+</html>
