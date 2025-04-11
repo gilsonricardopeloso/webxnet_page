@@ -128,13 +128,13 @@ export default function Contact() {
         >
           Entre em Contato
         </h2>
-        <p className="text-gray-600 mb-10">
+        <p className="text-gray-600 mb-8">
           Tem alguma dúvida, sugestão ou projeto em mente? Manda pra gente!
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-6 text-left"
+          className="space-y-4 text-left"
           noValidate
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -269,7 +269,7 @@ export default function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows={4}
+              rows={2}
               required
               aria-required="true"
               aria-invalid={!!errors.message}
