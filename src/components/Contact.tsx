@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { toast } from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast"
 import { Loader2 } from "lucide-react"
 import { sendContactForm } from "../lib/api"
 
@@ -29,7 +29,7 @@ const initialFormData: FormData = {
   phone: "",
   company: "",
 }
-
+const notify = () => toast("Enviado com sucesso!")
 const validateForm = (data: FormData): FormErrors => {
   const errors: FormErrors = {}
 
