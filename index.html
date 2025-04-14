@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="light">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-161023728-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+      gtag("config", "UA-161023728-1")
+    </script>
+    <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js")
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="google-site-verification"
       content="sV0JYWrprBCCq9k5wdLdpfgn0E_GRehV4--d3796-uw"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f4c81" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://www.webxnet.com.br/" />
+    <meta name="webxnet" value="notranslate" />
+    <meta name="author" content="GGS Informática" />
     <meta name="robots" content="index, follow" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      src="https://www.googletagmanager.com/gtag/js?id=UA-161023728-1"
-      async
-    ></script>
+    <meta name="application-name" content="webxnet" />
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -39,7 +59,7 @@
       data-blockingmode="auto"
       type="text/javascript"
     ></script>
-    <title>Webxnet - Soluções em TI</title>
+    <title>Webxnet - Soluções Digitais Inteligentes</title>
     <script>
       // Theme management
       if (
@@ -73,5 +93,58 @@
         adicionar à tela inicial</span
       >
     </div>
+    <!-- Start of Async Drift Code -->
+    <script>
+      "use strict"
+
+      !(function () {
+        var t = (window.driftt = window.drift = window.driftt || [])
+        if (!t.init) {
+          if (t.invoked)
+            return void (
+              window.console &&
+              console.error &&
+              console.error("Drift snippet included twice.")
+            )
+          ;(t.invoked = !0),
+            (t.methods = [
+              "identify",
+              "config",
+              "track",
+              "reset",
+              "debug",
+              "show",
+              "ping",
+              "page",
+              "hide",
+              "off",
+              "on",
+            ]),
+            (t.factory = function (e) {
+              return function () {
+                var n = Array.prototype.slice.call(arguments)
+                return n.unshift(e), t.push(n), t
+              }
+            }),
+            t.methods.forEach(function (e) {
+              t[e] = t.factory(e)
+            }),
+            (t.load = function (t) {
+              var e = 3e5,
+                n = Math.ceil(new Date() / e) * e,
+                o = document.createElement("script")
+              ;(o.type = "text/javascript"),
+                (o.async = !0),
+                (o.crossorigin = "anonymous"),
+                (o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js")
+              var i = document.getElementsByTagName("script")[0]
+              i.parentNode.insertBefore(o, i)
+            })
+        }
+      })()
+      drift.SNIPPET_VERSION = "0.3.1"
+      drift.load("v3em3tyamgv3")
+    </script>
+    <!-- End of Async Drift Code -->
   </body>
 </html>
