@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 var staticCacheName = "wxn-2020-05-22d"
 var filesToCache = [
   "/",
