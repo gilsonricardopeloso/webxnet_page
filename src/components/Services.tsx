@@ -24,12 +24,12 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-white">
-      <div className="mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary">
             Nossos Serviços
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-6 text-lg text-gray-600">
             Soluções completas para sua presença digital
           </p>
         </div>

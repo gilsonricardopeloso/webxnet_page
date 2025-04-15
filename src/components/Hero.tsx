@@ -1,3 +1,6 @@
+import { useState } from "react"
+import { Button } from "./ui/button"
+
 const Hero = () => {
   const handleConsultoriaClick = () => {
     // Rola até a seção de contato
@@ -50,13 +53,13 @@ const Hero = () => {
             role="region"
             aria-label="Chamada para ação"
           >
-            <button
+            <Button
               onClick={handleConsultoriaClick}
               className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Agende uma consultoria gratuita"
             >
               Agende uma consultoria gratuita →
-            </button>
+            </Button>
           </div>
         </div>
       </div>

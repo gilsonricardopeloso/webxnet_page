@@ -30,7 +30,7 @@ export default function Diagnostic() {
       className="py-20 inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 -z-10 text-center"
     >
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="mt-8 text-4xl font-bold text-secondary mb-4">
+        <h2 className="mt-8 text-4xl font-bold  text-secondary mb-4">
           Diagnóstico de Marketing Digital
         </h2>
         <p className="text-lg text-gray-700 mb-10">
@@ -40,7 +40,7 @@ export default function Diagnostic() {
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           <div className="p-4 bg-white shadow rounded-2xl">
-            <h3 className="font-semibold  text-secondary  text-xl mb-2">
+            <h3 className="font-semibold text-xl  text-secondary mb-2">
               🎯 Definir Objetivos
             </h3>
             <p className="text-sm text-gray-600">
@@ -48,7 +48,7 @@ export default function Diagnostic() {
             </p>
           </div>
           <div className="p-4 bg-white shadow rounded-2xl">
-            <h3 className="font-semibold  text-secondary text-xl mb-2">
+            <h3 className="font-semibold text-xl  text-secondary mb-2">
               📥 Coleta de Dados
             </h3>
             <p className="text-sm text-gray-600">
@@ -56,7 +56,7 @@ export default function Diagnostic() {
             </p>
           </div>
           <div className="p-4 bg-white shadow rounded-2xl">
-            <h3 className="font-semibold  text-secondary  text-xl mb-2">
+            <h3 className="font-semibold text-xl  text-secondary mb-2">
               🌐 Presença Online
             </h3>
             <p className="text-sm text-gray-600">
@@ -64,7 +64,7 @@ export default function Diagnostic() {
             </p>
           </div>
           <div className="p-4 bg-white shadow rounded-2xl">
-            <h3 className="font-semibold  text-secondary  text-xl mb-2">
+            <h3 className="font-semibold text-xl  text-secondary mb-2">
               📊 Análise Estratégica
             </h3>
             <p className="text-sm text-gray-600">

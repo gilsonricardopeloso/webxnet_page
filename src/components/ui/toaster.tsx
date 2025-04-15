@@ -1,41 +1,37 @@
-import { useToast } from "../../hooks/use-toast"
-import {
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from "../../components/ui/toast"
+import { useToast } from "./use-toast"
+import { CheckCircle2, AlertCircle, Info, XCircle } from "lucide-react"
+
+const toastStyles = {
+  success: "bg-green-50 text-green-800 border-green-200",
+  error: "bg-red-50 text-red-800 border-red-200",
+  warning: "bg-yellow-50 text-yellow-800 border-yellow-200",
+  info: "bg-blue-50 text-blue-800 border-blue-200"
+}
+
+const toastIcons = {
+  success: CheckCircle2,
+  error: XCircle,
+  warning: AlertCircle,
+  info: Info
+}
 
 export function Toaster() {
   const { toasts } = useToast()
 
   return (
-    <ToastProvider>
-      {toasts.map(function ({ id, title, description, action, ...props }) {
+    <div className="fixed bottom-4 right-4 z-50 space-y-2">
+      {toasts.map((toast) => {
+        const Icon = toastIcons[toast.type]
         return (
-          <Toast
-            key={id}
-            {...props}
-            className="bg-background/95 backdrop-blur-sm"
+          <div
+            key={toast.id}
+            className={`flex items-center gap-2 rounded-lg border p-4 shadow-lg ${toastStyles[toast.type]}`}
           >
-            <div className="grid gap-1">
-              {title && (
-                <ToastTitle className="font-semibold">{title}</ToastTitle>
-              )}
-              {description && (
-                <ToastDescription className="text-sm opacity-90">
-                  {description}
-                </ToastDescription>
-              )}
-            </div>
-            {action}
-            <ToastClose />
-          </Toast>
+            <Icon className="h-5 w-5" />
+            <p className="text-sm font-medium">{toast.message}</p>
+          </div>
         )
       })}
-      <ToastViewport className="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" />
-    </ToastProvider>
+    </div>
   )
 }

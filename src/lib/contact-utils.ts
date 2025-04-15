@@ -17,16 +17,16 @@ export interface FormData {
 export const initialFormData: FormData = {
   name: "",
   email: "",
-  message: "",
   phone: "",
   company: "",
+  message: "",
   address: {
     add1: "",
     add2: "",
     city: "",
     state: "",
     zip: "",
-    country: "",
+    country: "Brazil",
   },
 }
 
