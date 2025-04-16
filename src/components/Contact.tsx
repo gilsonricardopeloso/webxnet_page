@@ -16,17 +16,37 @@ import {
 } from "./ui/alert-dialog"
 import { FormData, initialFormData, validateForm } from "../lib/contact-utils"
 
+interface ContactProps {
+  initialMessage?: string
+}
 
-
-export default function Contact() {
-  const [formData, setFormData] = useState<FormData>(initialFormData)
+export default function Contact({ initialMessage = "" }: ContactProps) {
+  const [formData, setFormData] = useState<FormData>({
+    ...initialFormData,
+    message: initialMessage,
+  })
   const [errors, setErrors] = useState<Partial<FormData>>({})
   const [loading, setLoading] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const { toast } = useToast()
 
-// Função para atualizar o estado do formulário quando a mensagem é alterada externamente
-useEffect(() => {
+  // Atualiza a mensagem quando initialMessage muda
+  useEffect(() => {
+    if (initialMessage) {
+      setFormData((prev) => ({
+        ...prev,
+        message: initialMessage,
+      }))
+      // Scroll to the form when initialMessage changes
+      const formElement = document.getElementById("contact")
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }, [initialMessage])
+
+  // Função para atualizar o estado do formulário quando a mensagem é alterada externamente
+  useEffect(() => {
     const handleMessageChange = (e: Event) => {
       const target = e.target as HTMLTextAreaElement
       if (target.id === "message") {
@@ -80,11 +100,10 @@ useEffect(() => {
           setShowConfirmation(true)
           setFormData(initialFormData)
         }
-      } catch {
+      } catch (error) {
         toast({
           title: "Erro",
-          description:
-            "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
+          description: error instanceof Error ? error.message : "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
           variant: "destructive",
         })
       } finally {
@@ -251,7 +270,7 @@ useEffect(() => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Sua mensagem"
-                  className={`min-h-[100px] text-base bg-[#eff6ff] ${errors.message ? "border-red-500" : ""}`}
+                  className={`min-h-[200px] text-base bg-[#eff6ff] ${errors.message ? "border-red-500" : ""}`}
                 />
                 {errors.message && (
                   <p className="text-sm text-red-500">{errors.message}</p>

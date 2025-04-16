@@ -1,28 +1,13 @@
 import { useState } from "react"
 import { Button } from "./ui/button"
 
-const Hero = () => {
-  const handleConsultoriaClick = () => {
-    // Rola até a seção de contato
-    const contactSection = document.getElementById("contact")
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
+interface HeroProps {
+  onConsultoriaClick: (message: string) => void
+}
 
-      // Aguarda a animação de scroll
-      setTimeout(() => {
-        // Preenche o campo de mensagem
-        const messageInput = document.getElementById(
-          "message"
-        ) as HTMLTextAreaElement
-        if (messageInput) {
-          messageInput.value =
-            "Solicito agendamento da minha consultoria gratuita"
-          // Dispara o evento de change para atualizar o estado do formulário
-          const event = new Event("change", { bubbles: true })
-          messageInput.dispatchEvent(event)
-        }
-      }, 500)
-    }
+const Hero = ({ onConsultoriaClick }: HeroProps) => {
+  const handleClick = () => {
+    onConsultoriaClick("Gostaria de agendar uma consultoria gratuita.")
   }
 
   return (
@@ -54,7 +39,7 @@ const Hero = () => {
             aria-label="Chamada para ação"
           >
             <Button
-              onClick={handleConsultoriaClick}
+              onClick={handleClick}
               className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Agende uma consultoria gratuita"
             >
