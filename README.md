@@ -151,3 +151,154 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 ## 📞 Contato
 
 Para mais informações, entre em contato através do formulário em nosso site ou envie um email para contato@webxnet.com.br
+
+# Webxnet Landing Page
+
+Landing page moderna com React, Vite, TailwindCSS e backend serverless para integração com Mailchimp, pronta para deploy na Netlify.
+
+---
+
+## ✨ Funcionalidades
+
+- **Frontend**: React + Vite + TailwindCSS
+- **Formulário de contato**: Envia dados para o Mailchimp via função serverless
+- **Backend**: Função serverless Netlify (`netlify/functions/contact.ts`) ou Express local
+- **Deploy fácil**: Pronto para Netlify, com domínio customizado e variáveis de ambiente
+
+---
+
+## 🚀 Como rodar localmente
+
+### 1. Instale as dependências
+
+```sh
+npm install
+```
+
+### 2. Rode o frontend
+
+```sh
+npm run dev
+```
+
+### 3. (Opcional) Rode as funções serverless localmente
+
+Instale o Netlify CLI:
+
+```sh
+npm install -g netlify-cli
+```
+
+Rode o projeto com funções serverless:
+
+```sh
+netlify dev
+```
+
+Acesse: [http://localhost:8888](http://localhost:8888)
+
+### 4. (Opcional) Rode o backend Express localmente
+
+Se preferir rodar o backend tradicional:
+
+```sh
+cd backend
+npm install
+npm run dev
+```
+
+O frontend já está configurado para enviar para `/api/contact`.
+
+---
+
+## 🛠️ Estrutura do Projeto
+
+- `src/` — Código do frontend (React)
+- `src/lib/api.ts` — Integração do frontend com o backend/função serverless
+- `netlify/functions/contact.ts` — Função serverless para envio ao Mailchimp
+- `backend/server.ts` — Backend Express para uso local (opcional)
+- `netlify.toml` — Configuração de build e redirects para Netlify
+
+---
+
+## 🌐 Deploy na Netlify
+
+### 1. Suba o projeto para um repositório Git (GitHub, GitLab, Bitbucket)
+
+### 2. Importe o projeto na Netlify
+
+- Clique em "Add new site" > "Import an existing project"
+- Escolha o repositório
+
+### 3. Configure o build
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Functions directory:** `netlify/functions`
+
+### 4. Variáveis de ambiente
+
+No painel da Netlify, adicione em **Site settings > Environment variables**:
+
+- `MAILCHIMP_API_KEY`
+- `MAILCHIMP_SERVER_PREFIX`
+- `MAILCHIMP_LIST_ID`
+- `NPM_FLAGS = --legacy-peer-deps`
+
+### 5. Deploy
+
+- Clique em "Deploy site"
+- O site estará disponível em `https://<seu-site>.netlify.app` e no domínio customizado (após configuração DNS)
+
+---
+
+## 📝 Configuração de Redirects (`netlify.toml`)
+
+```toml
+[build]
+  functions = "netlify/functions"
+
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+  force = true
+```
+
+---
+
+## 📨 Função Serverless de Contato (`netlify/functions/contact.ts`)
+
+- Recebe POST em `/api/contact`
+- Faz integração com Mailchimp
+- Lida com CORS automaticamente
+
+---
+
+## 🐞 Dicas de Troubleshooting
+
+- Se o build falhar por dependências, use a variável de ambiente `NPM_FLAGS = --legacy-peer-deps`
+- Se o domínio customizado mostrar o site antigo, confira a configuração DNS e faça um novo deploy
+- Veja os logs das funções serverless no painel da Netlify para debugar problemas de envio
+- Rode `npm run build` localmente para garantir que não há erros antes do deploy
+
+---
+
+## 📦 Scripts úteis
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "netlify:dev": "netlify dev"
+}
+```
+
+---
+
+## 📄 Licença
+
+MIT

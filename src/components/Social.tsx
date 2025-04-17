@@ -15,7 +15,7 @@ const Social = () => {
     },
     {
       icon: X,
-      href: "https://twitter.com",
+      href: "https://x.com/webxnet1",
       label: "Twitter",
     },
     {
