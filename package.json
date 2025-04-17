@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prepare": "husky install",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "netlify:dev": "netlify dev"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
