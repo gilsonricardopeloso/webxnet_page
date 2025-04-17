@@ -19,7 +19,14 @@ interface ContactRequestBody {
   message: string
   phone?: string
   company?: string
-  address?: string
+  address?: {
+    add1?: string
+    add2?: string
+    city?: string
+    state?: string
+    zip?: string
+    country?: string
+  }
 }
 
 // Rota para o formulário de contato
@@ -44,7 +51,14 @@ app.post("/api/contact", async (req: Request<object, object, ContactRequestBody>
           FNAME: name,
           PHONE: phone || "",
           COMPANY: company || "",
-          ADDRESS: address || "",
+          ADDRESS: {
+            addr1: address?.add1 || "",
+            addr2: address?.add2 || "",
+            city: address?.city || "",
+            state: address?.state || "",
+            zip: address?.zip || "",
+            country: address?.country || "",
+          },
           MESSAGE: message,
         },
       },

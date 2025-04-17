@@ -270,7 +270,7 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Sua mensagem"
-                  className={`min-h-[200px] text-base bg-[#eff6ff] ${errors.message ? "border-red-500" : ""}`}
+                  className={`min-h-[100px] text-base bg-[#eff6ff] ${errors.message ? "border-red-500" : ""}`}
                 />
                 {errors.message && (
                   <p className="text-sm text-red-500">{errors.message}</p>

@@ -119,7 +119,7 @@ const Footer = () => {
       <Button
         variant="secondary"
         size="icon"
-        className="fixed bottom-11 right-28 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
+        className="fixed bottom-10 right-28 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
         onClick={scrollToTop}
         aria-label="Voltar ao topo"
       >

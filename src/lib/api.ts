@@ -1,13 +1,14 @@
 import axios from "axios"
 import { FormData } from "./contact-utils"
 
-const API_URL = "http://localhost:3000"
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
 export const sendContactForm = async (data: FormData) => {
   try {
     const response = await axios.post(`${API_URL}/api/contact`, {
       ...data,
       email: data.email.toLowerCase(),
+      address: data.address,
     })
     return response.data
   } catch (error) {
@@ -28,6 +29,7 @@ export const updateContact = async (data: FormData) => {
     const response = await axios.put(`${API_URL}/api/contact`, {
       ...data,
       email: data.email.toLowerCase(),
+      address: data.address,
     })
     return response.data
   } catch (error) {
