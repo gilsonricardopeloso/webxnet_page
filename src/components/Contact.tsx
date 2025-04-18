@@ -103,7 +103,10 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
       } catch (error) {
         toast({
           title: "Erro",
-          description: error instanceof Error ? error.message : "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
+          description:
+            error instanceof Error
+              ? error.message
+              : "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
           variant: "destructive",
         })
       } finally {
@@ -113,7 +116,10 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section
+      id="contact"
+      className="py-20 inset-0 bg-gradient-to-r from-blue-100 to-indigo-200 -z-10"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
@@ -129,7 +135,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
             <form onSubmit={handleSubmit} className="space-y-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="space-y-0.5">
-                  <Label htmlFor="name" className="text-base text-gray-800 font-medium">Nome</Label>
+                  <Label
+                    htmlFor="name"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Nome
+                  </Label>
                   <Input
                     id="name"
                     name="name"
@@ -144,7 +155,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5">
-                  <Label htmlFor="email" className="text-base text-gray-800 font-medium">Email</Label>
+                  <Label
+                    htmlFor="email"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Email
+                  </Label>
                   <Input
                     id="email"
                     name="email"
@@ -160,7 +176,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5">
-                  <Label htmlFor="phone" className="text-base text-gray-800 font-medium">Telefone</Label>
+                  <Label
+                    htmlFor="phone"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Telefone
+                  </Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -175,7 +196,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5">
-                  <Label htmlFor="company" className="text-base text-gray-800 font-medium">Empresa</Label>
+                  <Label
+                    htmlFor="company"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Empresa
+                  </Label>
                   <Input
                     id="company"
                     name="company"
@@ -189,7 +215,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
                 <div className="space-y-0.5 md:col-span-4">
-                  <Label htmlFor="address.add1" className="text-base text-gray-800 font-medium">Rua, número</Label>
+                  <Label
+                    htmlFor="address.add1"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Rua, número
+                  </Label>
                   <Input
                     id="address.add1"
                     name="address.add1"
@@ -201,7 +232,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5 md:col-span-2">
-                  <Label htmlFor="address.add2" className="text-base text-gray-800 font-medium">Complemento</Label>
+                  <Label
+                    htmlFor="address.add2"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Complemento
+                  </Label>
                   <Input
                     id="address.add2"
                     name="address.add2"
@@ -213,7 +249,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5 md:col-span-2">
-                  <Label htmlFor="address.city" className="text-base text-gray-800 font-medium">Cidade</Label>
+                  <Label
+                    htmlFor="address.city"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Cidade
+                  </Label>
                   <Input
                     id="address.city"
                     name="address.city"
@@ -225,7 +266,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5 md:col-span-1">
-                  <Label htmlFor="address.state" className="text-base text-gray-800 font-medium">Estado</Label>
+                  <Label
+                    htmlFor="address.state"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    Estado
+                  </Label>
                   <Input
                     id="address.state"
                     name="address.state"
@@ -237,7 +283,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5 md:col-span-2">
-                  <Label htmlFor="address.zip" className="text-base text-gray-800 font-medium">CEP</Label>
+                  <Label
+                    htmlFor="address.zip"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    CEP
+                  </Label>
                   <Input
                     id="address.zip"
                     name="address.zip"
@@ -249,7 +300,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 </div>
 
                 <div className="space-y-0.5 md:col-span-1">
-                  <Label htmlFor="address.country" className="text-base text-gray-800 font-medium">País</Label>
+                  <Label
+                    htmlFor="address.country"
+                    className="text-base text-gray-800 font-medium"
+                  >
+                    País
+                  </Label>
                   <Input
                     id="address.country"
                     name="address.country"
@@ -263,7 +319,12 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
               </div>
 
               <div className="space-y-0.5">
-                <Label htmlFor="message" className="text-base text-gray-800 font-medium">Mensagem</Label>
+                <Label
+                  htmlFor="message"
+                  className="text-base text-gray-800 font-medium"
+                >
+                  Mensagem
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
@@ -277,9 +338,9 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
                 )}
               </div>
 
-              <Button 
-                type="submit" 
-                className="w-full h-14 text-lg bg-blue-600 hover:bg-blue-700 text-white" 
+              <Button
+                type="submit"
+                className="w-full h-14 text-lg text-white"
                 disabled={loading}
               >
                 {loading ? "Enviando..." : "Enviar Mensagem"}
@@ -294,7 +355,8 @@ export default function Contact({ initialMessage = "" }: ContactProps) {
           <AlertDialogHeader>
             <AlertDialogTitle>Mensagem Enviada!</AlertDialogTitle>
             <AlertDialogDescription>
-              Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.
+              Sua mensagem foi enviada com sucesso. Entraremos em contato em
+              breve.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

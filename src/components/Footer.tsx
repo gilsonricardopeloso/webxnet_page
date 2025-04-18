@@ -2,7 +2,7 @@
 import { ArrowUp } from "lucide-react"
 import { Button } from "./ui/button"
 import Social from "./Social"
-import WebxnetLogo from "../../webxnet-small.svg"
+import WebxnetLogo from "../../webxnet.svg"
 
 declare global {
   interface Window {

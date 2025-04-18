@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Button } from "./ui/button"
 
 interface HeroProps {
@@ -13,7 +12,7 @@ const Hero = ({ onConsultoriaClick }: HeroProps) => {
   return (
     <main id="main-content" className="relative min-h-screen flex items-center">
       <div
-        className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 -z-10"
+        className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-150 -z-10"
         aria-hidden="true"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
@@ -40,7 +39,7 @@ const Hero = ({ onConsultoriaClick }: HeroProps) => {
           >
             <Button
               onClick={handleClick}
-              className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition-colors"
               aria-label="Agende uma consultoria gratuita"
             >
               Agende uma consultoria gratuita →

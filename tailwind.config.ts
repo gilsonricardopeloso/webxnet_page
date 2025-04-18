@@ -32,7 +32,7 @@ export default {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#0F172A",
+          DEFAULT: "#061e33",
           foreground: "#FFFFFF",
         },
         muted: {
