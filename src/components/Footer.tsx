@@ -2,11 +2,12 @@
 import { ArrowUp } from "lucide-react"
 import { Button } from "./ui/button"
 import Social from "./Social"
-import { ReactSVG } from "react-svg"
+import WebxnetLogo from "../../webxnet-small.svg"
 
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void
+    openCookiebotModal?: () => void
   }
 }
 
@@ -38,7 +39,11 @@ const Footer = () => {
               role="img"
               aria-label="Logo Webxnet"
             >
-              <ReactSVG src="webxnet.svg" />
+              <img
+                src={WebxnetLogo}
+                alt="Webxnet logo"
+                className="w-full h-auto"
+              />
             </div>
             <p className="mt-4 text-xl text-gray-300 max-w-md text-center md:text-left">
               Transformando ideias em soluções digitais inteligentes.
@@ -114,6 +119,20 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Webxnet.</p>
+        </div>
+        <div className="mt-4 text-center">
+          <button
+            type="button"
+            className="inline-block bg-primary text-white px-4 py-2 rounded-lg shadow hover:bg-primary/90 transition-colors text-sm"
+            style={{ marginTop: "1rem" }}
+            onClick={() => {
+              if (typeof window !== "undefined" && window.openCookiebotModal) {
+                window.openCookiebotModal()
+              }
+            }}
+          >
+            Mostrar os cookies consentidos
+          </button>
         </div>
       </div>
       <Button

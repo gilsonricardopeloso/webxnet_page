@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="light">
   <head>
     <script
@@ -146,6 +146,86 @@
       drift.load("v3em3tyamgv3")
     </script>
     <!-- End of Async Drift Code -->
-     <script id="CookieDeclaration" src="https://consent.cookiebot.com/bf8bc3d2-23b8-4712-b64f-5bf2320f3242/cd.js" type="text/javascript" async></script>
+    <div
+      id="cookiebot-modal"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        style="
+          background: #fff;
+          max-width: 600px;
+          width: 90vw;
+          border-radius: 12px;
+          box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
+          padding: 2em;
+          position: relative;
+        "
+      >
+        <button
+          id="close-cookiebot-modal"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #0f4c81;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2em;
+            cursor: pointer;
+          "
+        >
+          &times;
+        </button>
+        <div id="cookiebot-content">
+          <!-- O conteúdo do Cookiebot será carregado aqui -->
+        </div>
+      </div>
+    </div>
+    <script>
+      // Função para abrir o modal do Cookiebot
+      function openCookiebotModal() {
+        document.getElementById("cookiebot-modal").style.display = "flex"
+      }
+      // Função para fechar o modal
+      document.getElementById("close-cookiebot-modal").onclick = function () {
+        document.getElementById("cookiebot-modal").style.display = "none"
+      }
+      // Carregar o script do Cookiebot dentro do modal
+      window.addEventListener("DOMContentLoaded", function () {
+        var script = document.createElement("script")
+        script.id = "CookieDeclaration"
+        script.src =
+          "https://consent.cookiebot.com/bf8bc3d2-23b8-4712-b64f-5bf2320f3242/cd.js"
+        script.type = "text/javascript"
+        script.async = true
+        script.onload = function () {
+          // O Cookiebot irá renderizar o conteúdo dentro do elemento com id CookieDeclaration
+        }
+        document.getElementById("cookiebot-content").appendChild(script)
+      })
+      // Exemplo: abrir o modal automaticamente ao carregar a página (apenas uma vez por usuário)
+      window.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("cookiebotModalShown")) {
+          setTimeout(function () {
+            openCookiebotModal()
+            localStorage.setItem("cookiebotModalShown", "true")
+          }, 1000)
+        }
+      })
+    </script>
   </body>
 </html>
