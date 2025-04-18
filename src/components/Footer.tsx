@@ -35,14 +35,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           <div className="flex flex-col items-center md:items-start">
             <div
-              className="w-22 md:w-32 mb-6"
+              className="w-full flex justify-center mb-6"
               role="img"
               aria-label="Logo Webxnet"
             >
               <img
                 src={WebxnetLogo}
                 alt="Webxnet logo"
-                className="w-full h-auto"
+                className="w-40 md:w-56 h-auto mx-auto"
               />
             </div>
             <p className="mt-4 text-xl text-gray-300 max-w-md text-center md:text-left">
