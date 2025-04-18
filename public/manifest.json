@@ -1,8 +1,9 @@
 {
+  "id": "/",
+  "scope": "/",
   "name": "webxnet",
   "short_name": "webxnet",
   "start_url": "/",
-  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -21,6 +22,13 @@
     }
   ],
   "theme_color": "#ffffff",
+  "description": "This is a PWA Webxnet app",
+  "orientation": "any",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
 }
